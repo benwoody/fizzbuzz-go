@@ -31,12 +31,18 @@ func whatToSay(counter int) string {
   return fmt.Sprintf("%d", counter)
 }
 
+func say(thingToSay string) {
+  fmt.Printf("%v\n", thingToSay)
+}
+
 func main() {
+  const infinite  = false
+  const threshold = 100
+  const interval  = time.Second / 2
 
-  for counter := 1 ; true ; counter++ {
-    fmt.Printf("%v\n", whatToSay(counter))
+  for counter := 1 ; infinite || counter < threshold ; counter++ {
+    say(whatToSay(counter))
 
-    time.Sleep(time.Second)
+    time.Sleep(interval)
   }
-
 }
