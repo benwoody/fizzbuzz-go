@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
-import "math"
-import "time"
+import (
+  "fmt"
+  "math"
+  "time"
+)
 
 func evenlyDivisible(counter int, divisor int) bool {
   return math.Remainder(float64(counter), float64(divisor)) == 0
